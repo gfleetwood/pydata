@@ -2,7 +2,7 @@ import importlib
 
 def libs():
   
-  requirements = [['pd', 'pandas']]
+  requirements = [['pd', 'pandas'], ['skl', 'sklearn'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot']]
   imported_libs = {lib[0]: importlib.import_module(lib[1]) for lib in requirements}
   print(
   ''' 
@@ -14,8 +14,6 @@ def libs():
   scikit-learn loaded as sk
   matplotlib.pyplot loaded as plt
   plotnine loaded as pn
-  
-  If you're in a Jupyter notebook run `%matplotlib inline` to add inline visualizations.
   '''
   )
   
