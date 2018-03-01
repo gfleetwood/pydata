@@ -18,11 +18,4 @@ def libs():
   )
   
   return imported_libs
-  
-  
 
-#import sklearn as sk
-#import numpy as np
-#import pandas as pd
-#import plotnine as pn
-#import matplotlib.pyplot as plt
