@@ -3,7 +3,7 @@ import importlib
 def libs():
   
   requirements = [
-    ['pd', 'pandas'], ['skl', 'sklearn'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot'],
+    ['pd', 'pandas'], ['sk_lm', 'sklearn.linear_model'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot'],
     ['lz', 'logzero'], ['pandasql', 'pandasql'],
     ]
   imported_libs = {lib[0]: importlib.import_module(lib[1]) for lib in requirements}
@@ -14,7 +14,7 @@ def libs():
   
   numpy loaded as np
   pandas loaded as pd
-  scikit-learn loaded as sk
+  scikit-learn.linear_model loaded as sk_lm
   matplotlib.pyplot loaded as plt
   plotnine loaded as pn
   
