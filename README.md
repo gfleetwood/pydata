@@ -2,8 +2,11 @@
 
 ## Intro
 
-A Python version of the tidyverse's most visible feature of importing multiple libraries all at once. It was written and tested in Python 3.5 on Linux, but I don't think there
-would be issues in other versionsand systems. 
+A Python version of the tidyverse's most visible feature of importing multiple libraries all at once. It was written and tested in Python 3.5 on Linux, but I don't think there would be issues in other versions and systems.
+
+## Installation
+
+Installation of this package is only through this repo for now. Clone it and run `python setup.py install` to install the package on your system.
 
 ## Usage
 
@@ -18,6 +21,4 @@ You now have access to numpy as np, scikit-learn.linear_model as skl_lm, pandas 
 
 Adding additional libraries is simple. Open `pydata/load_libs.py` and add your library to the requirements lists in the form `[<name_to_reference>, <name_of_package>]`. (For example, pandas in in the requirements as `['pd', 'pandas']`.)
 
-## Installation
 
-Installation of this package is only through this repo for now. Clone it and run `python setup.py install` to install the package on your system.
