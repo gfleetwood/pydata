@@ -3,10 +3,12 @@ import importlib
 def libs():
   
   requirements = [
-    ['pd', 'pandas'], ['sk_lm', 'sklearn.linear_model'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot'],
+    ['pd', 'pandas'], ['sk', 'sklearn'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot'],
     ['lz', 'logzero'], ['pandasql', 'pandasql'],
     ]
+  
   imported_libs = {lib[0]: importlib.import_module(lib[1]) for lib in requirements}
+  
   print(
   ''' 
   pydata
@@ -17,7 +19,7 @@ def libs():
   scikit-learn.linear_model loaded as sk_lm
   matplotlib.pyplot loaded as plt
   plotnine loaded as pn
-  
+  logzero as lz  
   
   pandasql is also loaded. For usage, please run `pdsql = lambda q: sqldf(q, globals())` and reference
   `pdsql`.
