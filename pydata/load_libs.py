@@ -1,30 +1,22 @@
-import importlib
-
-def libs():
-  
-  requirements = [
-    ['pd', 'pandas'], ['sk', 'sklearn'], ['np', 'numpy'], ['pn', 'plotnine'], ['plt', 'matplotlib.pyplot'],
-    ['lz', 'logzero'], ['pandasql', 'pandasql'],
-    ]
-  
-  imported_libs = {lib[0]: importlib.import_module(lib[1]) for lib in requirements}
-  
-  print(
-  ''' 
-  pydata
-  _______
-  
-  numpy loaded as np
-  pandas loaded as pd
-  scikit-learn.linear_model loaded as sk_lm
-  matplotlib.pyplot loaded as plt
-  plotnine loaded as pn
-  logzero as lz  
-  
-  pandasql is also loaded. For usage, please run `pdsql = lambda q: sqldf(q, globals())` and reference
-  `pdsql`.
-  '''
-  )
-  
-  return imported_libs
-
+def load_libs():
+    
+    import importlib
+    
+    try:
+        requirements = pd.read_csv("~/.pydata/pydata.csv").values.tolist()
+        msg = "\nLoading user defined libraries"
+        print(msg)
+    except:
+        requirements = [['numpy', 'np'], ['pandas', 'pd'], ['matplotlib.pyplot', "plt"], 
+                        ['sklearn.linear_model', "sk_lm"]]
+        msg = "\nLoading default libraries"
+        print(msg)
+    
+    imported_libs = {lib[1]: importlib.import_module(lib[0]) for lib in requirements}  
+    globals().update(imported_libs)
+    
+    print("_"*len(msg) + "\n")
+    loaded_libs = list(map(lambda x: print(x[0] + " loaded as " + x[1] + "\n"), requirements))
+    loaded_libs
+        
+    return None

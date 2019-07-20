@@ -1,2 +1,2 @@
-from .load_libs import libs
+from .load_libs import load_libs
 
