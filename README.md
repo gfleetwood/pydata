@@ -6,19 +6,33 @@ A Python version of the tidyverse's most visible feature of importing multiple l
 
 ## Installation
 
-Installation of this package is only through this repo for now. Clone it and run `python setup.py install` to install the package on your system.
+The package can be installed through pip:
+
+`pip install pydato`
+
+Or by cloning the repo and running `python setup.py install`.
 
 ## Usage
 
-Run these two lines of code and you're good to go.
+pydato has only one function and using it requires help from Python's globals.
 
 ```
-from pydata import libs
-globals().update(libs())
+from pydato import load_libs
+globals().update(load_libs())
 ```
 
-You now have access to numpy as np, scikit-learn.linear_model as skl_lm, pandas as pd, matplotlib.pyplot as plt, and plotnine as pn in the namespace. pandasql is also loaded, but you need to run `pdsql = lambda q: sqldf(q, globals())`  to reference it as `pdsql`.
+In this call without any supplied arguments pydato checks to see if the file `"~/.pydato/pydato.csv"` exists in your root directory. If it doesn't, then the function loads numpy as np, pandas as pd, matplotlib.pyplot as plt, and sklearn.linear_model as sk_lm. You can create this file with two columns - the column names don't matter but the order does - to load a custom set of packages. For example:
 
-Adding additional libraries is simple. Open `pydata/load_libs.py` and add your library to the requirements lists in the form `[<name_to_reference>, <name_of_package>]`. (For example, pandas in in the requirements as `['pd', 'pandas']`.)
+```
+package, alias
+pandas, pd
+numpy, np
+```
+
+Alternatively you can make use of the function's parameters:
+
+`load_libs(file_path = None, include_defaults = False, verbose = True)`
+
+Supply a `file_path` for the function to check for a csv in the same format outlined above to load libraries from custom file paths. Setting `include_defaults` to True tells the function to use the specified file path and the defaults from `"~/.pydata/pydata.csv"`. Set `verbose` to False to prevent the printing of information regarding the loaded packages and their aliases. 
 
 
