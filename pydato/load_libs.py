@@ -1,6 +1,7 @@
-def load_libs(file_path = None, include_defaults = False, verbose = True):
-    
-    import importlib
+import importlib
+import pandas as pd
+
+def load_libs(file_path = None, include_defaults = False, verbose = True):    
     
     defaults = [['numpy', 'np'], ['pandas', 'pd'], ['matplotlib.pyplot', "plt"], 
                 ['sklearn.linear_model', "sk_lm"]]

@@ -21,7 +21,7 @@ from pydato import load_libs
 globals().update(load_libs())
 ```
 
-In this call without any supplied arguments pydato checks to see if the file `"~/.pydato/pydato.csv"` exists in your root directory. If it doesn't, then the function loads numpy as np, pandas as pd, matplotlib.pyplot as plt, and sklearn.linear_model as sk_lm. You can create this file with two columns - the column names don't matter but the order does - to load a custom set of packages. For example:
+In this call without any supplied arguments pydato checks to see if the file `"~/.pydato/pydato.csv"` exists in your root directory. (On Windows this is equivalent to `C:\Users\user\.pydato\pydato.csv`.) If it doesn't, then the function loads numpy as np, pandas as pd, matplotlib.pyplot as plt, and sklearn.linear_model as sk_lm. You can create this file with two columns - the column names don't matter but the order does - to load a custom set of packages. For example:
 
 ```
 package, alias

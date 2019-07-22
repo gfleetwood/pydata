@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pydato',
-      version='0.111',
+      version='0.112',
       description='The tidyverse in Python',
       url='https://github.com/gfleetwood/pydata',
       author='Gorrdon Fleetwood',
