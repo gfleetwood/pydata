@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(name='pydato',
-      version='0.112',
+      version='0.114',
       description='The tidyverse in Python',
       url='https://github.com/gfleetwood/pydata',
-      author='Gorrdon Fleetwood',
+      author='Gordon Fleetwood',
       author_email='gfleetwood@protonmail.com',
       license='MIT',
       packages=['pydato'],
